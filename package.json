@@ -1,0 +1,25 @@
+{
+  "name": "i18n-formatter-cli",
+  "version": "1.0.0",
+  "description": "cli tool",
+  "main": "index.js",
+  "bin": {
+    "i18n": "./index.js"
+  },
+  "scripts": {
+    "test": "node ./utils/init"
+  },
+  "dependencies": {
+    "commander": "9.0.0",
+    "chalk": "5.0.0"
+  },
+  "devDependencies": {
+    "eslint": "8.6.0",
+    "eslint-config-next": "12.0.8",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1"
+  },
+  "author": "Makar Kuzmichev",
+  "license": "ISC"
+}
