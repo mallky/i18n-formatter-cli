@@ -1,5 +1,6 @@
 const path = require('path');
-const findProjectRoot = require('./findProjectRoot.js');
+const fs = require('fs');
+import findProjectRoot from './findProjectRoot.js';
 
 const maybeParse = (filePath, parse) =>
   filePath &&
@@ -8,11 +9,13 @@ const maybeParse = (filePath, parse) =>
   });
 
 const parseConfig = (filePath, { root }) => {
+  const isConfigExist = fs.existsSync(`${root}/${filePath}`);
+  if (!isConfigExist) {
+    return console.error(
+      'config file not found. You can try `i18n-cli init` to create config file'
+    );
+  }
   return require(`${root}/${filePath}`);
 };
 
-const getConfig = (filePath) => maybeParse(filePath, parseConfig);
-
-module.exports = {
-  getConfig,
-};
+export const getConfig = (filePath) => maybeParse(filePath, parseConfig);

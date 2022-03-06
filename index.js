@@ -1,8 +1,8 @@
 #! /usr/bin/env node
 
 const { program } = require('commander');
-const addAllKeys = require('./utils/addAllKeys');
-const {init} = require('./utils/init');
+import addAllKeys from './utils/addAllKeys';
+import { init } from './utils/init';
 
 program
   .command('addAllKeys')
@@ -11,5 +11,6 @@ program
   )
   .action(addAllKeys);
 
-program
-.command('init').description('Init .i18nfnrc.js file').action(init);
+program.command('init').description('Init .i18nfnrc.js file').action(init);
+
+program.parse();

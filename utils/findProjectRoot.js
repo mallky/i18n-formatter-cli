@@ -23,4 +23,4 @@ function findProjectRoot(directory) {
   return directory;
 }
 
-module.exports = findProjectRoot;
+export default findProjectRoot;

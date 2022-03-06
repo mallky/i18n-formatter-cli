@@ -1,3 +1,5 @@
-const { getConfig } = require('./utils/getConfig');
+import { getConfig } from './getConfig';
 
 const config = getConfig('.i18nfnrc.js');
+
+export default config;

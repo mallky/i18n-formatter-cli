@@ -1,13 +1,13 @@
+import findProjectRoot from './findProjectRoot.js';
 const path = require('path');
 const fs = require('fs');
-const findProjectRoot = require('./findProjectRoot.js');
 
 const DEFAULT_STRUCTURE = `module.exports = {
   translationsDir: './mocks',
   mainTranslation: './mocks/en-gb.json'
 }`;
 
-const init = () => {
+export const init = () => {
   const pathFile = findProjectRoot(path.dirname(path.resolve('.i18nfnrc.js')));
 
   const isFileExist = fs.existsSync(pathFile + '/.i18nfnrc.js');
@@ -27,5 +27,3 @@ const init = () => {
     }
   );
 };
-
-module.exports = { init };
