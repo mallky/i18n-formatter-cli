@@ -14,19 +14,25 @@ After instalation you can check all the command by running `i18n-cli --help`;
 
 1. At first you need to create `.i18nfnrc.js` file with fields `localesDir`, `mainLocale` and `localeToMerge`. For example:
 `
-module.exports = {\
-  localesDir: './mocks',\
-  mainLocale: 'en-gb.json',\
-  localeToMerge: './mocks/externalTranslation.json'\
-}
+    module.exports = {
+      localesDir: './mocks',
+      mainLocale: 'en-gb.json',
+      localeToMerge: './mocks/externalTranslation.json'
+    }
 `
 (You can create `.i18nfnrc.js` by running `i18n-cli init`)
 2. Try to use cli!
 Example: 
 `
-i18n-cli init  
+i18n-cli init
+`
+` 
 i18n-cli create fileName  
+`
+`
 i18n-cli addAllKeys  
+`
+`
 i18n-cli merge fileName1 fileName2  
 `
 
