@@ -1,6 +1,6 @@
 {
   "name": "i18n-formatter-cli",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "cli tool",
   "main": "bundle.js",
   "bin": {
