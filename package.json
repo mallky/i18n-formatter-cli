@@ -1,24 +1,29 @@
 {
   "name": "i18n-formatter-cli",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "cli tool",
   "main": "bundle.js",
   "bin": {
     "i18n-cli": "./bundle.js"
   },
   "scripts": {
-    "test": "node ./utils/init",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "testAddAll": "npm run build && i18n-cli addAllKeys",
+    "testMerge": "npm run build && i18n-cli merge jp-jp.json",
+    "testCreate": "npm run build && i18n-cli create ua-ua.json",
     "build": "rollup --config rollup.config.js"
   },
   "dependencies": {
-    "chalk": "5.0.0",
+    "cli-color": "2.0.1",
     "commander": "9.0.0"
   },
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.16.8",
     "eslint": "8.6.0",
     "eslint-config-next": "12.0.8",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "jest": "27.5.1",
     "prettier": "^2.5.1",
     "rollup": "^2.69.2",
     "rollup-plugin-preserve-shebang": "^1.0.1",

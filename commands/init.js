@@ -1,10 +1,12 @@
-import findProjectRoot from './findProjectRoot.js';
+import findProjectRoot from '../utils/findProjectRoot';
 const path = require('path');
 const fs = require('fs');
+const clc = require('cli-color');
 
 const DEFAULT_STRUCTURE = `module.exports = {
-  translationsDir: './mocks',
-  mainTranslation: './mocks/en-gb.json'
+  localesDir: './mocks',
+  mainLocale: 'en-gb.json',
+  localeToMerge: 'externalTranslation.json'
 }`;
 
 export const init = () => {
@@ -13,7 +15,7 @@ export const init = () => {
   const isFileExist = fs.existsSync(pathFile + '/.i18nfnrc.js');
 
   if (isFileExist) {
-    return chalk.red.bold('file .i18nfnrc.js already exists');
+    return console.log(clc.red('File .i18nfnrc.js already exists'));
   }
 
   fs.writeFileSync(
@@ -23,7 +25,7 @@ export const init = () => {
       if (err) {
         throw new Error(err);
       }
-      console.log(res);
+      console.log(clc.blue('File .i18nfnrc.js is created!'));
     }
   );
 };
