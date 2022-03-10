@@ -1,10 +1,15 @@
 {
   "name": "i18n-formatter-cli",
-  "version": "0.1.0",
-  "description": "cli tool",
+  "private": true,
+  "version": "0.1.1",
+  "description": "i18n automatization cli tool. Easily add keys, merge translation into an existing file, and create new locale files.",
   "main": "bundle.js",
   "bin": {
     "i18n-cli": "./bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mallky/i18n-formatter-cli.git"
   },
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
@@ -29,6 +34,6 @@
     "rollup-plugin-preserve-shebang": "^1.0.1",
     "rollup-plugin-terser": "^7.0.2"
   },
-  "author": "Makar Kuzmichev",
-  "license": "ISC"
+  "author": "Makar Kuzmichev (https://github.com/mallky)",
+  "license": "MIT"
 }
