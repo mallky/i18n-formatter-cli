@@ -1,8 +1,7 @@
 {
   "name": "i18n-formatter-cli",
-  "private": true,
   "version": "0.1.1",
-  "description": "i18n automatization cli tool. Easily add keys, merge translation into an existing file, and create new locale files.",
+"description": "i18n automatization cli tool. Easily add keys, merge translation into an existing file, and create new locale files.",
   "main": "bundle.js",
   "bin": {
     "i18n-cli": "./bundle.js"
