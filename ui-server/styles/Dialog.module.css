@@ -1,0 +1,28 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: rgba(0, 0, 0, 0.8);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  padding: 16px;
+  border-radius: 16px;
+  border-width: 2px;
+  border-color: #000000;
+  background-color: whitesmoke;
+  max-height: 50%;
+  width: 80%;
+  overflow: auto;
+}
+
+.item {
+  margin-left: 8px
+}

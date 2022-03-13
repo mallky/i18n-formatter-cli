@@ -37,7 +37,7 @@ $ i18n-cli init
 $ i18n-cli create fileName  
 ```
 ```
-$ i18n-cli addAllKeys  
+$ i18n-cli add-all-keys  
 ```
 ```
 $ i18n-cli merge fileName1 fileName2  

@@ -4,9 +4,9 @@ const fs = require('fs');
 const clc = require('cli-color');
 
 const DEFAULT_STRUCTURE = `module.exports = {
-  localesDir: './mocks',
+  localesDir: './locales',
   mainLocale: 'en-gb.json',
-  localeToMerge: 'externalTranslation.json'
+  localeToMerge: './translation/externalTranslation.json'
 }`;
 
 export const init = () => {
@@ -18,14 +18,10 @@ export const init = () => {
     return console.log(clc.red('File .i18nfnrc.js already exists'));
   }
 
-  fs.writeFileSync(
-    pathFile + '/.i18nfnrc.js',
-    DEFAULT_STRUCTURE,
-    (err, res) => {
-      if (err) {
-        throw new Error(err);
-      }
-      console.log(clc.blue('File .i18nfnrc.js is created!'));
+  fs.writeFile(pathFile + '/.i18nfnrc.js', DEFAULT_STRUCTURE, (err, res) => {
+    if (err) {
+      throw new Error(err);
     }
-  );
+    console.log(clc.blue('File .i18nfnrc.js is created!'));
+  });
 };

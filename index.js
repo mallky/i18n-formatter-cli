@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 import { program } from 'commander';
-import { addAllKeys, init, merge, create } from './commands/index';
+import { addAllKeys, init, merge, create, uiStart } from './commands/index';
 
 program.command('init').description('Init .i18nfnrc.js file').action(init);
 program
@@ -12,7 +12,7 @@ program
   .action(create);
 
 program
-  .command('addAllKeys')
+  .command('add-all-keys')
   .description(
     'Add all keys from main translation file to all the others files'
   )
@@ -24,6 +24,13 @@ program
     "Merge `fileName2` file keys to `fileName1`. If `fileName1` doesn't exist it will be created with all keys from `fileName2`. `fileName2` is `localeToMerge` file by default."
   )
   .action(merge);
+
+program
+  .command('ui-start')
+  .description(
+    'Start the server to work with locale management through the UI. Default address `localhost:3000`'
+  )
+  .action(uiStart);
 
 program.parse();
 
