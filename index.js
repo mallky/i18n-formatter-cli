@@ -26,3 +26,5 @@ program
   .action(merge);
 
 program.parse();
+
+export { addAllKeys, init, merge, create };
